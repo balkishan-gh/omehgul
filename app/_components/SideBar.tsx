@@ -13,7 +13,7 @@ function SideBar() {
       <div className="flex flex-col items-start p-4 pr-10 gap-y-4">
         <div className="font-semibold text-orange-400">Now</div>
         <div className="flex flex-col">
-          <div className="flex flex-col">
+          <div className="flex flex-col hover:bg-orange-300 px-4 py-2 rounded-md">
             <div>
               <span className="font-semibold">New York, USA</span> (00:59:00)
             </div>
@@ -22,19 +22,19 @@ function SideBar() {
         </div>
         <div className="font-semibold text-orange-400">Today</div>
         <div className="flex flex-col gap-y-2">
-          <div className="flex flex-col">
+          <div className="flex flex-col hover:bg-orange-300 px-4 py-2 rounded-md">
             <div>
               <span className="font-semibold">New York, USA</span> (00:59:00)
             </div>
             <div>40.7128° N, 74.0060° W</div>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col hover:bg-orange-300 px-4 py-2 rounded-md">
             <div>
               <span className="font-semibold">New York, USA</span> (00:59:00)
             </div>
             <div>40.7128° N, 74.0060° W</div>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col hover:bg-orange-300 px-4 py-2 rounded-md">
             <div>
               <span className="font-semibold">New York, USA</span> (00:59:00)
             </div>
@@ -43,31 +43,31 @@ function SideBar() {
         </div>
         <div className="font-semibold text-orange-400">Last week</div>
         <div className="flex flex-col gap-y-2">
-          <div className="flex flex-col">
+          <div className="flex flex-col hover:bg-orange-300 px-4 py-2 rounded-md">
             <div>
               <span className="font-semibold">New York, USA</span> (00:59:00)
             </div>
             <div>40.7128° N, 74.0060° W</div>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col hover:bg-orange-300 px-4 py-2 rounded-md">
             <div>
               <span className="font-semibold">New York, USA</span> (00:59:00)
             </div>
             <div>40.7128° N, 74.0060° W</div>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col hover:bg-orange-300 px-4 py-2 rounded-md">
             <div>
               <span className="font-semibold">New York, USA</span> (00:59:00)
             </div>
             <div>40.7128° N, 74.0060° W</div>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col hover:bg-orange-300 px-4 py-2 rounded-md">
             <div>
               <span className="font-semibold">New York, USA</span> (00:59:00)
             </div>
             <div>40.7128° N, 74.0060° W</div>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col hover:bg-orange-300 px-4 py-2 rounded-md">
             <div>
               <span className="font-semibold">New York, USA</span> (00:59:00)
             </div>

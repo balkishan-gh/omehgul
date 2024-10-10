@@ -33,7 +33,7 @@ function VideoBox() {
   return (
     <div>
       <div className="font-semibold text-3xl md:text-lg p-4">Chatroom</div>
-      <div className="flex flex-col gap-y-4 w-[900px] items-start justify-center p-4">
+      <div className="flex flex-col gap-y-4 items-start justify-center p-4">
         <div className="w-full md:w-[450px] h-[615px] md:h-[337.5px] bg-blue-400 rounded-md"></div>
         <video
           ref={videoRef}
@@ -42,6 +42,7 @@ function VideoBox() {
           muted
           height={450}
           width={450}
+          controls
           className="rounded-md w-full md:w-[450px]"
         ></video>
       </div>
