@@ -37,7 +37,7 @@ function Mid() {
         height={750}
         width={750}
         alt="hero image"
-        className=""
+        className="flex-shrink"
       />
     </div>
   );
