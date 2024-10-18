@@ -1,9 +1,16 @@
+import { cn } from "@/libs/utils";
+import clsx from "clsx";
 import { SendHorizontal } from "lucide-react";
 import React from "react";
 
-function MessageBox() {
+function MessageBox({ isVideo }: any) {
   return (
-    <div className="h-[92vh] overflow-y-scroll flex">
+    <div
+      className={cn(
+        isVideo === true ? "hidden" : "flex",
+        "h-[92vh] overflow-y-scroll lg:flex"
+      )}
+    >
       <div className="flex flex-col gap-y-4 mt-16 w-[755px] p-4 flex-shrink">
         <div className="bg-gray-300 px-4 py-2 rounded-full self-start max-w-[300px]">
           Hi Yash
@@ -39,7 +46,7 @@ function MessageBox() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, ab.
         </div>
       </div>
-      <div className="p-4 fixed bottom-0 w-[100%] md:w-[73.5%] lg:w-[50%]">
+      <div className="p-4 fixed bottom-0 w-[100%] md:w-[73.5%] lg:w-[35%] xl:w-[50%]">
         <form>
           <div className="flex items-center justify-between bg-white px-4 py-2 rounded-full">
             <textarea className="resize-none focus:outline-none w-[90%] h-6"></textarea>

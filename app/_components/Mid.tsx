@@ -1,7 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 
-function Mid() {
+function Mid({ isVideoHandler }: any) {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between  mx-auto max-w-[1280px]">
       <div className="flex flex-col">
@@ -12,10 +14,20 @@ function Mid() {
           Start chatting:
         </div>
         <div className="flex items-center gap-x-4 mt-2 px-4 tracking-wide">
-          <button className="bg-blue-500 text-white rounded-md px-10 sm:px-16 py-2 font-semibold">
+          <button
+            className="bg-blue-500 text-white rounded-md px-10 sm:px-16 py-2 font-semibold"
+            onClick={() => {
+              isVideoHandler(true);
+            }}
+          >
             Video
           </button>
-          <button className=" text-blue-500 border-[1px] border-blue-500 rounded-md px-10 sm:px-16 py-2 font-semibold">
+          <button
+            className=" text-blue-500 border-[1px] border-blue-500 rounded-md px-10 sm:px-16 py-2 font-semibold"
+            onClick={() => {
+              isVideoHandler(false);
+            }}
+          >
             Text
           </button>
         </div>
