@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/_components/VideoBox.jsx", "app/_components/SocketProvider.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/_components/VideoBox.jsx", "app/_components/SocketProvider.jsx", "app/_components/MessageBox.jsx", "app/_components/Mid.jsx"],
   "exclude": ["node_modules"]
 }

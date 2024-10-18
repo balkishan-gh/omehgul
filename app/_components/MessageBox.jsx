@@ -1,9 +1,12 @@
 import { cn } from "@/libs/utils";
 import clsx from "clsx";
 import { SendHorizontal } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
+import { useSocket } from "./SocketProvider";
 
-function MessageBox({ isVideo }: any) {
+function MessageBox({ isVideo }) {
+  const { socket } = useSocket();
+  const [newMessage, setNewMessage] = useState();
   return (
     <div
       className={cn(
@@ -47,10 +50,28 @@ function MessageBox({ isVideo }: any) {
         </div>
       </div>
       <div className="p-4 fixed bottom-0 w-[100%] md:w-[73.5%] lg:w-[35%] xl:w-[50%]">
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            console.log("Line no. 56");
+            console.log(newMessage);
+            socket.emit("send-message", {
+              message: newMessage,
+            });
+            setNewMessage("");
+          }}
+        >
           <div className="flex items-center justify-between bg-white px-4 py-2 rounded-full">
-            <textarea className="resize-none focus:outline-none w-[90%] h-6"></textarea>
-            <SendHorizontal />
+            <textarea
+              className="resize-none focus:outline-none w-[90%] h-6"
+              value={newMessage}
+              onChange={(e) => {
+                setNewMessage(e.target.value);
+              }}
+            ></textarea>
+            <button>
+              <SendHorizontal />
+            </button>
           </div>
         </form>
       </div>

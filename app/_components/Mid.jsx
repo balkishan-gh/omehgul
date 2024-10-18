@@ -2,8 +2,13 @@
 
 import Image from "next/image";
 import React from "react";
+import { useSocket } from "./SocketProvider";
 
-function Mid({ isVideoHandler }: any) {
+function Mid({ isVideoHandler }) {
+  const { socket } = useSocket();
+  const joinHandler = () => {
+    socket.emit("join-room", { id: socket.id });
+  };
   return (
     <div className="flex flex-col md:flex-row items-center justify-between  mx-auto max-w-[1280px]">
       <div className="flex flex-col">
@@ -26,6 +31,7 @@ function Mid({ isVideoHandler }: any) {
             className=" text-blue-500 border-[1px] border-blue-500 rounded-md px-10 sm:px-16 py-2 font-semibold"
             onClick={() => {
               isVideoHandler(false);
+              joinHandler();
             }}
           >
             Text
