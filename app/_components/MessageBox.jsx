@@ -54,9 +54,11 @@ function MessageBox({ isVideo }) {
           onSubmit={(e) => {
             e.preventDefault();
             console.log("Line no. 56");
+            console.log(remoteId);
             console.log(newMessage);
-            socket.emit(remoteId, {
+            socket.emit("send-message", {
               message: newMessage,
+              socketId: remoteId,
             });
             setNewMessage("");
           }}
