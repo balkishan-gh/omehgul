@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { useSocket } from "./SocketProvider";
 
 function MessageBox({ isVideo }) {
-  const { socket } = useSocket();
+  const { socket, remoteId } = useSocket();
   const [newMessage, setNewMessage] = useState();
   return (
     <div
@@ -55,7 +55,7 @@ function MessageBox({ isVideo }) {
             e.preventDefault();
             console.log("Line no. 56");
             console.log(newMessage);
-            socket.emit("send-message", {
+            socket.emit(remoteId, {
               message: newMessage,
             });
             setNewMessage("");
