@@ -49,6 +49,20 @@ function Mid({ isVideoHandler }) {
           <option value="lesbian">Lesbian</option>
           <option value="lesbian">Attack Helicopter</option>
         </select>
+        <select
+          name="gender"
+          id="gender"
+          className="py-2 focus:outline-none rounded-md w-[300px] mx-4 mt-4 tracking-wide bg-blue-100"
+        >
+          <option value="">You're (optional)</option>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+          <option value="gay">Gay</option>
+          <option value="lesbian">Lesbian</option>
+          <option value="lesbian">Attack Helicopter</option>
+        </select>
+        <input id="city" placeholder="Where do you wanna connect?" className="focus:outline-none py-2 px-5 rounded-md bg-blue-100 mt-4" />
+        <div className="text-xs px-5">Be specific if you wanna talk to people of specific region for eg, "North America" or "United States of America" or "New York" or "Brooklyn".</div>
       </div>
       <Image
         src={"/images/omehgul.png"}

@@ -102,13 +102,21 @@ function MessageBox({ isVideo }) {
         >
           <div className="flex items-center justify-between bg-white px-4 py-2 rounded-full">
             <textarea
+              disabled={remoteId ? false : true}
+              placeholder={
+                remoteId
+                  ? messages.length === 0
+                    ? "Say hi..."
+                    : "Send a message..."
+                  : "Waiting for someone..."
+              }
               className="resize-none focus:outline-none w-[90%] h-6"
               value={newMessage}
               onChange={(e) => {
                 setNewMessage(e.target.value);
               }}
             ></textarea>
-            <button>
+            <button disabled={newMessage.length === 0 ? true : false}>
               <SendHorizontal />
             </button>
           </div>
