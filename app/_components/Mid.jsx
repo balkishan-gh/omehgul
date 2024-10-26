@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { useSocket } from "./SocketProvider";
 
-function Mid({ isVideoHandler }) {
+function Mid({ isVideoHandler, joinCall, getCam }) {
   const { socket } = useSocket();
   const joinHandler = () => {
     socket.emit("join-room", { id: socket.id });
@@ -23,6 +23,8 @@ function Mid({ isVideoHandler }) {
             className="bg-blue-500 text-white rounded-md px-10 sm:px-16 py-2 font-semibold"
             onClick={() => {
               isVideoHandler(true);
+              joinCall();
+              getCam();
             }}
           >
             Video
@@ -61,8 +63,16 @@ function Mid({ isVideoHandler }) {
           <option value="lesbian">Lesbian</option>
           <option value="lesbian">Attack Helicopter</option>
         </select>
-        <input id="city" placeholder="Where do you wanna connect?" className="focus:outline-none py-2 px-5 rounded-md bg-blue-100 mt-4" />
-        <div className="text-xs px-5">Be specific if you wanna talk to people of specific region for eg, "North America" or "United States of America" or "New York" or "Brooklyn".</div>
+        <input
+          id="city"
+          placeholder="Where do you wanna connect?"
+          className="focus:outline-none py-2 px-5 rounded-md bg-blue-100 mt-4"
+        />
+        <div className="text-xs px-5">
+          Be specific if you wanna talk to people of specific region for eg,
+          "North America" or "United States of America" or "New York" or
+          "Brooklyn".
+        </div>
       </div>
       <Image
         src={"/images/omehgul.png"}

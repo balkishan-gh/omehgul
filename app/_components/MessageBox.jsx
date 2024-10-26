@@ -116,7 +116,9 @@ function MessageBox({ isVideo }) {
                 setNewMessage(e.target.value);
               }}
             ></textarea>
-            <button disabled={newMessage.length === 0 ? true : false}>
+            <button 
+            // disabled={newMessage.length === 0 ? true : false}
+            >
               <SendHorizontal />
             </button>
           </div>
