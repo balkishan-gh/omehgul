@@ -18,11 +18,11 @@ function page() {
   console.log(localVideoTrack);
   console.log("Line no. 18");
 
-  // useEffect(() => {
-  //   if (videoRef && videoRef.current) {
-  //     getCam();
-  //   }
-  // }, [videoRef]);
+  useEffect(() => {
+    // if (videoRef && videoRef.current) {
+      getCam();
+    // }
+  }, [videoRef]);
 
   const joinCall = useCallback(() => {
     socket.emit("join-video", { message: "Joining...", id: socket.id });
@@ -56,7 +56,7 @@ function page() {
         <Mid
           isVideoHandler={isVideoHandler}
           joinCall={joinCall}
-          getCam={getCam}
+          // getCam={getCam}
         />
       </>
     );

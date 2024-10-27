@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { useSocket } from "./SocketProvider";
 
-function Mid({ isVideoHandler, joinCall, getCam }) {
+function Mid({ isVideoHandler, joinCall }) {
   const { socket } = useSocket();
   const joinHandler = () => {
     socket.emit("join-room", { id: socket.id });
@@ -24,7 +24,7 @@ function Mid({ isVideoHandler, joinCall, getCam }) {
             onClick={() => {
               isVideoHandler(true);
               joinCall();
-              getCam();
+              // getCam();
             }}
           >
             Video

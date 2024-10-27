@@ -67,6 +67,7 @@ function VideoBox({ isVideo, audioTrack, videoTrack }) {
     setSendingPc(pc);
 
     if (videoTrack) {
+      console.log("Line no. 70");
       console.error("added tack");
       console.log(videoTrack);
       pc.addTrack(videoTrack);
@@ -238,7 +239,7 @@ function VideoBox({ isVideo, audioTrack, videoTrack }) {
         // localVideoRef.current.play();
       }
     }
-  }, [localVideoRef, videoTrack]);
+  }, [localVideoRef]);
 
   return (
     <div>
