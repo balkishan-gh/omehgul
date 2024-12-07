@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/_components/VideoBox.jsx", "app/_components/SocketProvider.jsx", "app/_components/MessageBox.jsx", "app/_components/Mid.jsx", "app/_components/Chatroom.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/_components/VideoBox.jsx", "app/_components/SocketProvider.jsx", "app/_components/MessageBox.jsx", "app/_components/Mid.jsx", "app/_components/Chatroom.jsx", "app/chatroom/page.jsx"],
   "exclude": ["node_modules"]
 }

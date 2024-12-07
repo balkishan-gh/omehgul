@@ -7,9 +7,9 @@ import { useSocket } from "./SocketProvider";
 function VideoBox({ isVideo, audioTrack, videoTrack }) {
   const [sendingPc, setSendingPc] = useState(null);
   const [receivingPc, setReceivingPc] = useState(null);
-  const [localStream, setLocalStream] = useState(null);
-  const [localAudioTrack, setLocalAudioTrack] = useState(null);
-  const [localVideoTrack, setlocalVideoTrack] = useState(null);
+  // const [localStream, setLocalStream] = useState(null);
+  // const [localAudioTrack, setLocalAudioTrack] = useState(null);
+  // const [localVideoTrack, setlocalVideoTrack] = useState(null);
   const [remoteVideoTrack, setRemoteVideoTrack] = useState(null);
   const [remoteAudioTrack, setRemoteAudioTrack] = useState(null);
   const [lobby, setLobby] = useState(true);
@@ -64,6 +64,14 @@ function VideoBox({ isVideo, audioTrack, videoTrack }) {
     console.log("Line no. 65");
     console.log(pc);
 
+    console.log(
+      receivingPc,
+      sendingPc,
+      remoteAudioTrack,
+      remoteVideoTrack,
+      lobby
+    );
+
     setSendingPc(pc);
 
     if (videoTrack) {
@@ -78,14 +86,14 @@ function VideoBox({ isVideo, audioTrack, videoTrack }) {
       pc.addTrack(audioTrack);
     }
 
-    // localStream?.getTracks().forEach((track) => {
+    // localStream?.getTracks().?forEach((track) => {
     //   if (track.kind === "video") {
     //     pc.addTrack(track, localStream); // Add video first
     //   }
     //   console.log("Line no. 64");
     //   console.log(pc);
     // });
-    // localStream?.getTracks().forEach((track) => {
+    // localStream?.getTracks()?.forEach((track) => {
     //   if (track.kind === "audio") {
     //     pc.addTrack(track, localStream); // Add audio after video
     //   }
@@ -107,7 +115,7 @@ function VideoBox({ isVideo, audioTrack, videoTrack }) {
     pc.onnegotiationneeded = async () => {
       console.log("on negotiation neeeded, sending offer");
       const offer = await pc.createOffer();
-      //@ts-ignore
+      //@ts-expect-error
       pc.setLocalDescription(offer);
       socket.emit("offer", { offer, id });
     };
@@ -120,7 +128,7 @@ function VideoBox({ isVideo, audioTrack, videoTrack }) {
     const pc = new RTCPeerConnection();
     pc.setRemoteDescription(offer);
     const answer = await pc.createAnswer();
-    //@ts-ignore
+    //@ts-expect-error
     pc.setLocalDescription(answer);
     const stream = new MediaStream();
     console.log("Line no. 100");
@@ -175,11 +183,11 @@ function VideoBox({ isVideo, audioTrack, videoTrack }) {
         setRemoteAudioTrack(track1);
         setRemoteVideoTrack(track2);
       }
-      //@ts-ignore
-      remoteVideoRef?.current?.srcObject.addTrack(track1);
-      //@ts-ignore
-      remoteVideoRef?.current?.srcObject.addTrack(track2);
-      //@ts-ignore
+      //@ts-expect-error
+      remoteVideoRef?.current?.srcObject?.addTrack(track1);
+      //@ts-expect-error
+      remoteVideoRef?.current?.srcObject?.addTrack(track2);
+      //@ts-expect-error
       // remoteVideoRef.current.play();
       // if (type == 'audio') {
       //     // setRemoteAudioTrack(track);
@@ -194,7 +202,8 @@ function VideoBox({ isVideo, audioTrack, videoTrack }) {
     }, 5000);
   };
 
-  const handleReceiveAnswer = ({ answer, id }) => {
+  // const handleReceiveAnswer = ({ answer, id }) => {
+  const handleReceiveAnswer = ({ answer }) => {
     setLobby(false);
     setSendingPc((pc) => {
       pc?.setRemoteDescription(answer);
@@ -204,7 +213,8 @@ function VideoBox({ isVideo, audioTrack, videoTrack }) {
     console.log("loop closed");
   };
 
-  const handleAddIceCandidate = ({ candidate, type, id }) => {
+  // const handleAddIceCandidate = ({ candidate, type, id }) => {
+  const handleAddIceCandidate = ({ candidate, type }) => {
     console.log("add ice candidate from remote");
     console.log({ candidate, type });
     if (type == "sender") {

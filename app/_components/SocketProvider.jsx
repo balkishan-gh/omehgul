@@ -11,7 +11,7 @@ export const useSocket = () => useContext(SocketContext);
 
 export const SocketProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
-  const [realTimemessages, setRealTimemessages] = useState(null);
+  // const [realTimemessages, setRealTimemessages] = useState(null);
   const [remoteId, setRemoteId] = useState(null);
 
   // const socket = useRef(io("http://ec2-13-60-240-192.eu-north-1.compute.amazonaws.com:5000"));
@@ -48,7 +48,8 @@ export const SocketProvider = ({ children }) => {
   }
 
   return (
-    <SocketContext.Provider value={{ socket, realTimemessages, remoteId }}>
+    // <SocketContext.Provider value={{ socket, realTimemessages, remoteId }}>
+    <SocketContext.Provider value={{ socket, remoteId }}>
       {children}
     </SocketContext.Provider>
   );

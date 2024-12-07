@@ -2,7 +2,7 @@ import React from "react";
 import SideBar from "./SideBar";
 import VideoBox from "./VideoBox";
 import MessageBox from "./MessageBox";
-import { useSocket } from "./SocketProvider";
+// import { useSocket } from "./SocketProvider";
 import { useRouter } from "next/navigation";
 
 function Chatroom({ isVideo, audioTrack, videoTrack }) {

@@ -6,7 +6,7 @@ import Mid from "./_components/Mid";
 import Chatroom from "./_components/Chatroom";
 import { useSocket } from "./_components/SocketProvider";
 
-function page() {
+function Page() {
   const [isVideo, setIsVideo] = useState(null);
   const [localAudioTrack, setLocalAudioTrack] = useState(null);
   const [localVideoTrack, setlocalVideoTrack] = useState(null);
@@ -20,7 +20,7 @@ function page() {
 
   useEffect(() => {
     // if (videoRef && videoRef.current) {
-      getCam();
+    getCam();
     // }
   }, [videoRef]);
 
@@ -70,4 +70,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
