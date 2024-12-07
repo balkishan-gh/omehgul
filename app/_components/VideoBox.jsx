@@ -115,7 +115,6 @@ function VideoBox({ isVideo, audioTrack, videoTrack }) {
     pc.onnegotiationneeded = async () => {
       console.log("on negotiation neeeded, sending offer");
       const offer = await pc.createOffer();
-      //@ts-expect-error
       pc.setLocalDescription(offer);
       socket.emit("offer", { offer, id });
     };
@@ -128,7 +127,6 @@ function VideoBox({ isVideo, audioTrack, videoTrack }) {
     const pc = new RTCPeerConnection();
     pc.setRemoteDescription(offer);
     const answer = await pc.createAnswer();
-    //@ts-expect-error
     pc.setLocalDescription(answer);
     const stream = new MediaStream();
     console.log("Line no. 100");
@@ -183,11 +181,8 @@ function VideoBox({ isVideo, audioTrack, videoTrack }) {
         setRemoteAudioTrack(track1);
         setRemoteVideoTrack(track2);
       }
-      //@ts-expect-error
       remoteVideoRef?.current?.srcObject?.addTrack(track1);
-      //@ts-expect-error
       remoteVideoRef?.current?.srcObject?.addTrack(track2);
-      //@ts-expect-error
       // remoteVideoRef.current.play();
       // if (type == 'audio') {
       //     // setRemoteAudioTrack(track);
