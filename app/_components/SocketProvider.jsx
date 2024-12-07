@@ -20,7 +20,9 @@ export const SocketProvider = ({ children }) => {
   console.log(remoteId);
 
   useEffect(() => {
-    const socketInstance = io("http://localhost:5000");
+    const socketInstance = io(
+      "http://ec2-13-60-240-192.eu-north-1.compute.amazonaws.com:8080"
+    );
 
     socketInstance.on("connect", () => {
       console.log("Connected to the server with ID:", socketInstance.id);

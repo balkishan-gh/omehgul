@@ -56,7 +56,7 @@ function Mid({ isVideoHandler, joinCall }) {
           id="gender"
           className="py-2 focus:outline-none rounded-md w-[300px] mx-4 mt-4 tracking-wide bg-blue-100"
         >
-          <option value="">You're (optional)</option>
+          <option value="">You are (optional)</option>
           <option value="female">Female</option>
           <option value="male">Male</option>
           <option value="gay">Gay</option>
@@ -70,8 +70,7 @@ function Mid({ isVideoHandler, joinCall }) {
         />
         <div className="text-xs px-5">
           Be specific if you wanna talk to people of specific region for eg,
-          "North America" or "United States of America" or "New York" or
-          "Brooklyn".
+          North America or United States of America or New York or Brooklyn.
         </div>
       </div>
       <Image

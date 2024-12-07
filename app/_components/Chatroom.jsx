@@ -1,16 +1,13 @@
 import React from "react";
-import NavBar from "./NavBar";
 import SideBar from "./SideBar";
 import VideoBox from "./VideoBox";
 import MessageBox from "./MessageBox";
 import { useSocket } from "./SocketProvider";
 import { useRouter } from "next/navigation";
-import { RouteMatcher } from "next/dist/server/future/route-matchers/route-matcher";
 
 function Chatroom({ isVideo, audioTrack, videoTrack }) {
   console.log("Line no. 9");
   console.log(videoTrack);
-  const { socket } = useSocket();
   const router = useRouter();
   return (
     <>

@@ -241,36 +241,44 @@ function VideoBox({ isVideo, audioTrack, videoTrack }) {
     }
   }, [localVideoRef]);
 
+  // if (!isVideo) {
+  //   return;
+  // }
+
   return (
     <div>
       <div className="font-semibold text-3xl md:text-lg p-4">Chatroom</div>
       <div
         className={cn(
           isVideo === true ? "flex" : "hidden",
-          "flex-col gap-y-4 items-start justify-center p-4 lg:flex"
+          "flex-col gap-y-4 items-start justify-center p-4 lg:flex md:w-[450px]"
         )}
       >
         {/* <div className="w-full md:w-[450px] h-[615px] md:h-[337.5px] bg-blue-400 rounded-md"></div> */}
-        <video
-          ref={remoteVideoRef}
-          autoPlay
-          playsInline
-          muted
-          height={450}
-          width={450}
-          controls
-          className="rounded-md w-full md:w-[450px]"
-        ></video>
-        <video
-          ref={localVideoRef}
-          autoPlay
-          playsInline
-          muted
-          height={450}
-          width={450}
-          controls
-          className="rounded-md w-full md:w-[450px]"
-        ></video>
+        {isVideo && (
+          <>
+            <video
+              ref={remoteVideoRef}
+              autoPlay
+              playsInline
+              muted
+              height={450}
+              width={450}
+              controls
+              className="rounded-md w-full md:w-[450px]"
+            ></video>
+            <video
+              ref={localVideoRef}
+              autoPlay
+              playsInline
+              muted
+              height={450}
+              width={450}
+              controls
+              className="rounded-md w-full md:w-[450px]"
+            ></video>
+          </>
+        )}
       </div>
     </div>
   );

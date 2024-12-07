@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/libs/utils";
-import clsx from "clsx";
 import { SendHorizontal } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useSocket } from "./SocketProvider";
@@ -77,6 +76,7 @@ function MessageBox({ isVideo }) {
                 : "bg-gray-300 self-start",
               "px-4 py-2 rounded-full max-w-[300px]"
             )}
+            key={message.id}
           >
             {message.message}
           </div>
@@ -116,7 +116,7 @@ function MessageBox({ isVideo }) {
                 setNewMessage(e.target.value);
               }}
             ></textarea>
-            <button 
+            <button
             // disabled={newMessage.length === 0 ? true : false}
             >
               <SendHorizontal />
