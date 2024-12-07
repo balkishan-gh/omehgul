@@ -24,6 +24,7 @@ function Mid({ isVideoHandler, joinCall }) {
             onClick={() => {
               isVideoHandler(true);
               joinCall();
+              joinHandler();
               // getCam();
             }}
           >
