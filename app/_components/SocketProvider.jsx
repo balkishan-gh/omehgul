@@ -21,7 +21,7 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     const socketInstance = io(
-      "http://ec2-13-60-156-92.eu-north-1.compute.amazonaws.com:8080"
+      "http://ec2-13-51-205-74.eu-north-1.compute.amazonaws.com:8080"
       // "http://localhost:8080"
     );
 
