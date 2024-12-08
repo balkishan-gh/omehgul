@@ -25,6 +25,10 @@ function MessageBox({ isVideo }) {
   console.log("Line no. 22");
   console.log(messages);
 
+  if (isVideo) {
+    return;
+  }
+
   return (
     <div
       className={cn(
@@ -124,6 +128,7 @@ function MessageBox({ isVideo }) {
           </div>
         </form>
       </div>
+      
     </div>
   );
 }

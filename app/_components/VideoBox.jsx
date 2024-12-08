@@ -246,9 +246,9 @@ function VideoBox({ isVideo, audioTrack, videoTrack }) {
     }
   }, [localVideoRef]);
 
-  // if (!isVideo) {
-  //   return;
-  // }
+  if (!isVideo) {
+    return;
+  }
 
   return (
     <div>
