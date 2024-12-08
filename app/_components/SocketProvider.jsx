@@ -14,16 +14,15 @@ export const SocketProvider = ({ children }) => {
   // const [realTimemessages, setRealTimemessages] = useState(null);
   const [remoteId, setRemoteId] = useState(null);
 
-  // const socket = useRef(io("http://ec2-13-60-240-192.eu-north-1.compute.amazonaws.com:5000"));
+  // const socket = useRef(io(process.env.BACKEND_URL));
   // You can also store connection instance in a ref instead of managing state
   console.log("Line no. 19");
   console.log(remoteId);
 
   useEffect(() => {
-    const socketInstance = io(
-      "http://ec2-13-51-205-74.eu-north-1.compute.amazonaws.com:8080"
-      // "http://localhost:8080"
-    );
+    const socketInstance = io();
+    process.env.BACKEND_URL;
+    // "http://localhost:8080"
 
     socketInstance.on("connect", () => {
       console.log("Connected to the server with ID:", socketInstance.id);
