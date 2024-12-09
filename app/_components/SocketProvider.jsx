@@ -20,9 +20,10 @@ export const SocketProvider = ({ children }) => {
   console.log(remoteId);
 
   useEffect(() => {
-    const socketInstance = io();
-    process.env.BACKEND_URL;
-    // "http://localhost:8080"
+    const socketInstance = io(
+      process.env.BACKEND_URL
+      // "http://localhost:8080"
+    );
 
     socketInstance.on("connect", () => {
       console.log("Connected to the server with ID:", socketInstance.id);
